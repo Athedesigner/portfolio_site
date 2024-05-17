@@ -7,7 +7,16 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Ali Asif Portfolio",
   description: "Ali Asif's personal Portfolio",
-  authors: "Ali Asif (Athedesigner) & Abdul Hadi (hadi-14)",
+  authors: [
+    {
+      url: 'https://ali-asif.vercel.app',
+      name: 'Ali Asif',
+    },
+    {
+      url: 'https://abdul-hadi-millwala.vercel.app',
+      name: 'Abdul Hadi Millwala',
+    },
+  ],
   icons: "icon.png",
 };
 
