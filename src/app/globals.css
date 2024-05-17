@@ -70,3 +70,68 @@
   scrollbar-width: thin;
   scrollbar-color: #888 #333;
 }
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #000;
+}
+
+.new__bg {
+  height: 100%;
+  min-height: 500px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Add align-items property to center vertically */
+}
+
+.hello__div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.hello__svg {
+  fill: none;
+  stroke: #ffcf00; /* Change stroke color to #ffcf00 */
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: 48px;
+  stroke-dasharray: 5800px;
+  stroke-dashoffset: 5800px;
+  animation: anim__hello linear 2.5s forwards;
+  width: 100%;
+}
+
+@keyframes anim__hello {
+  0% {
+    stroke-dashoffset: 5800;
+  }
+  25% {
+    stroke-dashoffset: 5800;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.hello__div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+
