@@ -80,10 +80,11 @@ body {
 .new__bg {
   height: 100%;
   min-height: 500px;
-  background: black;
   display: flex;
   justify-content: center;
-  align-items: center; /* Add align-items property to center vertically */
+  align-items: center; 
+  background-color: #000 !important; 
+  background: #000 !important;
 }
 
 .hello__div {
@@ -94,6 +95,7 @@ body {
   text-align: center;
   width: 100%;
   max-width: 600px;
+  background-color: #000 !important;
 }
 
 .hello__svg {
@@ -106,6 +108,7 @@ body {
   stroke-dashoffset: 5800px;
   animation: anim__hello linear 2.5s forwards;
   width: 100%;
+  background-color: #000;
 }
 
 @keyframes anim__hello {

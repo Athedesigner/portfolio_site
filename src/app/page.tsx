@@ -46,7 +46,7 @@ export default function Home() {
   if (isLoading) {
     // Render loading animation while content is loading
     return (
-      <div className="h-full min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-300 via-blue-300 to-yellow-300">
+      <div className="h-full min-h-screen flex items-center justify-center">
       <div className="h-full w-full min-h-[500px] flex justify-center items-center">
         <HelloAnimation />
       </div>
