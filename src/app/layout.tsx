@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       name: 'Abdul Hadi Millwala',
     },
   ],
-  icons: "icon.png",
+  icons: "logo.png",
 };
 
 export default function RootLayout({

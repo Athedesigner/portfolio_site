@@ -44,7 +44,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: { clientX: number; clientY: number; }) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
 
       // Check if the cursor is near the edge of the viewport
@@ -93,7 +93,7 @@ export default function Home() {
       ></div>
       <BackgroundImages />
       <div className={`logo fixed top-7 left-10 z-20 ${bounceAnimation}`}>
-        <img src="/logo.png" alt="Logo" width={80} height={45} />
+        <img src="/logo1.png" alt="Logo" width={80} height={45} />
       </div>
       <button
         className={`hamburger fixed top-12 right-10 z-50 ${bounceAnimation}`}
