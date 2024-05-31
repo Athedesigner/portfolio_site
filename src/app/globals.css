@@ -159,9 +159,76 @@ body {
 }
 
 .hamburger-icon.active .line:nth-child(2) {
-  opacity: 0;
+  opacity: 0 ;
 }
 
 .hamburger-icon.active .line:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* globals.css or a relevant CSS module */
+
+.cursive-text {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 24px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cursive-animation 3s infinite;
+}
+
+@keyframes cursive-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+
+/* globals.css */
+
+/* Hide the default cursor */
+* {
+  cursor: none !important;
+}
+
+/* Define the custom cursor */
+.cursor-circle {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 4px solid #ffcf00; /* Set the border color */
+  background-color: transparent; /* Make the background transparent */
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: border-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.418); 
+}
+
+/* Darker color on hover */
+.cursor-hover {
+  background-color: #949494;
+  border: none;
+}
+
+/* Ensure interactive elements do not show the default cursor */
+button, a, .interactive {
+  cursor: none !important;
+}
+
+/* Custom cursor on scroll bars */
+body, html {
+  scrollbar-face-color: transparent;
+  scrollbar-track-color: transparent;
 }
