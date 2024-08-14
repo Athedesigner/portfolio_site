@@ -69,6 +69,18 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleTouchStart = () => {
+      setIsCursorHidden(true);
+    };
+
+    window.addEventListener('touchstart', handleTouchStart);
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+    };
+  }, []);
+
   const bounceAnimation = bounceTrigger ? 'animate-bounce' : '';
 
   if (isLoading) {
@@ -92,7 +104,11 @@ export default function Home() {
         style={{ top: `${cursorPosition.y}px`, left: `${cursorPosition.x}px` }}
       ></div>
       <BackgroundImages />
-      <div className={`logo fixed top-7 left-10 z-20 ${bounceAnimation}`}>
+      <div
+        className={`logo fixed top-7 left-10 z-20 ${bounceAnimation}`}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
         <img src="/logo1.png" alt="Logo" width={80} height={45} />
       </div>
       <button
