@@ -124,7 +124,7 @@ export default function Home() {
         </div>
       </button>
       <Sidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
-      <div className="relative z-10 text-white">
+      <div className="relative z-10 text-white flex flex-col items-center justify-center min-h-screen text-center">
         <h1 className="text-4xl font-bold">Welcome to my Portfolio!</h1>
         <p className="mt-4 text-lg">Scroll down to dive into my full journey!</p>
         {/* Add more content here */}
