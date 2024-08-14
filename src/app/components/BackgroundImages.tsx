@@ -1,4 +1,3 @@
-// components/BackgroundImages.tsx
 "use client";
 
 import { useEffect, useState, CSSProperties } from 'react';
@@ -33,7 +32,7 @@ const BackgroundImages = () => {
   };
 
   return (
-    <div className={`fixed inset-0 z-0 overflow-hidden ${isDarkMode ? 'bg-black' : 'bg-white'}`}>
+    <div className={`fixed inset-0 z-0 overflow-hidden ${isDarkMode ? 'bg-black' : 'bg-gray-100'}`}>
       <div className="absolute w-full h-full bottom-0">
         <div
           className="absolute inset-0 translate-y-[35%] animate-bounce-up"
@@ -44,7 +43,7 @@ const BackgroundImages = () => {
             alt="Image 1" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(0.95)' }} // Adjusted brightness for subtle effect
           />
         </div>
         <div
@@ -56,7 +55,7 @@ const BackgroundImages = () => {
             alt="Image 2" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(0.95)' }} // Adjusted brightness for subtle effect
           />
         </div>
         <div
@@ -68,7 +67,7 @@ const BackgroundImages = () => {
             alt="Image 3" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(0.95)' }} // Adjusted brightness for subtle effect
           />
         </div>
         <div
@@ -80,27 +79,19 @@ const BackgroundImages = () => {
             alt="Image 4" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(0.95)' }} // Adjusted brightness for subtle effect
           />
         </div>
-        <div className={`vignette ${isDarkMode ? '' : 'hidden'}`}></div> {/* Vignette overlay */}
       </div>
       <div 
         onClick={toggleTheme}
-        className={`fixed top-9 right-36 p-2 rounded-full flex items-center cursor-pointer ${isDarkMode ? 'bg-gray-700 shadow-lg' : 'bg-gray-300 shadow-sm'} transition-all duration-300`}
+        className={`fixed bottom-4 right-4 flex items-center justify-center w-12 h-12 rounded-full cursor-pointer ${isDarkMode ? 'bg-gray-800 text-yellow-300' : 'bg-gray-500 text-gray-700'} shadow-lg transition-all duration-300`}
       >
-        <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} className={`text-white ${isDarkMode ? 'text-yellow-300' : 'text-gray-700'}`} />
-        <div 
-          className={`w-12 h-6 bg-gray-500 rounded-full relative mx-2 cursor-pointer ${isDarkMode ? 'bg-gray-600' : 'bg-gray-200'} transition-colors duration-300`}
-          style={{ boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.3)' : '0 4px 8px rgba(0, 0, 0, 0.1)' }}
-        >
-          <div
-            className={`w-6 h-6 bg-white rounded-full absolute top-0 ${isDarkMode ? 'right-0' : 'left-0'} transition-transform duration-300`}
-            style={{ 
-              transform: isDarkMode ? 'translateX(calc(100% - 1.5rem))' : 'translateX(0)' 
-            }}
-          ></div>
-        </div>
+        <FontAwesomeIcon 
+          icon={isDarkMode ? faSun : faMoon} 
+          className={`text-white ${isDarkMode ? 'text-yellow-400' : 'text-gray-700'}`} 
+          size="lg" 
+        />
       </div>
     </div>
   );
