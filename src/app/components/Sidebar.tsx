@@ -12,17 +12,17 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     <div
       className={`fixed top-0 right-0 md:w-64 w-2/3 h-full bg-sidebar text-white transform ${
         isOpen ? "translate-x-0" : "translate-x-full"
-      } transition-transform duration-300 ease-in-out z-30`}
+      } transition-transform duration-300 ease-in-out z-10`}
     >
       <nav className="mt-16">
         <ul className="space-y-4">
           <li>
             <a
-              href="#section1"
+              href="#about"
               className="block px-4 py-2 text-gray-300 hover:text-white"
               onClick={onClose}
             >
-              Section 1
+              About
             </a>
           </li>
           <li>

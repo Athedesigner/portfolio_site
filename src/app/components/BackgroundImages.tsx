@@ -85,7 +85,7 @@ const BackgroundImages = () => {
       </div>
       <div 
         onClick={toggleTheme}
-        className={`fixed bottom-4 right-4 flex items-center justify-center w-12 h-12 rounded-full cursor-pointer ${isDarkMode ? 'bg-gray-800 text-yellow-300' : 'bg-gray-500 text-gray-700'} shadow-lg transition-all duration-300`}
+        className={`fixed bottom-4 right-4 flex items-center justify-center w-12 h-12 z-50 rounded-full cursor-pointer ${isDarkMode ? 'bg-gray-800 text-yellow-300' : 'bg-gray-500 text-gray-700'} shadow-lg transition-all duration-300`}
       >
         <FontAwesomeIcon 
           icon={isDarkMode ? faSun : faMoon} 

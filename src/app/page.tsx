@@ -1,7 +1,9 @@
+// page.tsx
 "use client";
 import { useEffect, useState } from 'react';
 import BackgroundImages from './components/BackgroundImages';
 import Sidebar from './components/Sidebar';
+import About from './components/About';
 import './globals.css'; // Ensure this path points to your global stylesheet
 import HelloAnimation from './components/HelloAnimation';
 
@@ -133,6 +135,7 @@ export default function Home() {
           render={(index) => <br key={index} />}
         />
       </div>
+      {scrollPosition > 400 && <About />} {/* Ensure About is conditionally rendered */}
     </main>
   );
 }
