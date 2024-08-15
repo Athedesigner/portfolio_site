@@ -43,7 +43,7 @@ const BackgroundImages = () => {
             alt="Image 1" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(0.95)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1.02)' }} // Adjusted brightness for subtle effect
           />
         </div>
         <div
@@ -55,7 +55,7 @@ const BackgroundImages = () => {
             alt="Image 2" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(0.95)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1.02)' }} // Adjusted brightness for subtle effect
           />
         </div>
         <div
@@ -67,7 +67,7 @@ const BackgroundImages = () => {
             alt="Image 3" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(0.95)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1.02)' }} // Adjusted brightness for subtle effect
           />
         </div>
         <div
@@ -79,7 +79,7 @@ const BackgroundImages = () => {
             alt="Image 4" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(0.95)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1.02)' }} // Adjusted brightness for subtle effect
           />
         </div>
       </div>
