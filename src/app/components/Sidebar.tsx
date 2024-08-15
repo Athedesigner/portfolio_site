@@ -25,7 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     <div
       className={`fixed top-0 right-0 md:w-64 w-2/3 h-full transform ${
         isOpen ? "translate-x-0" : "translate-x-full"
-      } transition-transform duration-300 ease-in-out z-10 ${
+      } transition-transform duration-300 ease-in-out z-30 ${
         isDarkMode ? "bg-sidebar" : "bg-gray-400"
       } text-white`}
     >
