@@ -123,7 +123,7 @@ export default function Home() {
         onMouseLeave={() => setIsHovering(false)}
       >
         <img
-          src={isDarkMode ? "/notionlogob.png" : "/notionlogow.png"}
+          src={isDarkMode ? "/logo1.png" : "/logo2.png"}
           alt="Logo"
           width={80}
           height={45}
