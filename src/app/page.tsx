@@ -1,5 +1,5 @@
-// page.tsx
 "use client";
+
 import { useEffect, useState } from 'react';
 import BackgroundImages from './components/BackgroundImages';
 import Sidebar from './components/Sidebar';
@@ -15,6 +15,7 @@ export default function Home() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isCursorHidden, setIsCursorHidden] = useState(false); // State to track if cursor should be hidden
+  const [isDarkMode, setIsDarkMode] = useState(true); // State for theme
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,6 +84,18 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleThemeChange = (event: CustomEvent) => {
+      setIsDarkMode(event.detail.isDarkMode);
+    };
+
+    window.addEventListener('themeChange', handleThemeChange as EventListener);
+
+    return () => {
+      window.removeEventListener('themeChange', handleThemeChange as EventListener);
+    };
+  }, []);
+
   const bounceAnimation = bounceTrigger ? 'animate-bounce' : '';
 
   if (isLoading) {
@@ -98,7 +111,7 @@ export default function Home() {
 
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between px-[15%] md:px-24 pt-24 bg-black custom-cursor`}
+      className={`flex min-h-screen flex-col items-center justify-between px-[15%] md:px-24 pt-24 ${isDarkMode ? 'bg-black text-white' : 'bg-gray-100 text-black'} custom-cursor`}
       onMouseEnter={() => setIsHovering(false)}
     >
       <div
@@ -111,7 +124,12 @@ export default function Home() {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
-        <img src="/logo1.png" alt="Logo" width={80} height={45} />
+        <img
+          src={isDarkMode ? "/notionlogob.png" : "/notionlogow.png"}
+          alt="Logo"
+          width={80}
+          height={45}
+        />
       </div>
       <button
         className={`hamburger fixed top-12 right-10 z-50 ${bounceAnimation}`}
@@ -126,7 +144,7 @@ export default function Home() {
         </div>
       </button>
       <Sidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
-      <div className="relative z-10 text-white flex flex-col items-center justify-center min-h-screen text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
         <h1 className="text-4xl font-bold">Welcome to my Portfolio!</h1>
         <p className="mt-4 text-lg">Scroll down to dive into my full journey!</p>
         {/* Add more content here */}

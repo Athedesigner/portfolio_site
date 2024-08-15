@@ -7,7 +7,7 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const BackgroundImages = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [isDarkMode, setIsDarkMode] = useState(true); // State for theme
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +28,10 @@ const BackgroundImages = () => {
   });
 
   const toggleTheme = () => {
-    setIsDarkMode(prevMode => !prevMode);
+    const newTheme = !isDarkMode;
+    setIsDarkMode(newTheme);
+    const themeEvent = new CustomEvent('themeChange', { detail: { isDarkMode: newTheme } });
+    window.dispatchEvent(themeEvent);
   };
 
   return (
@@ -43,7 +46,7 @@ const BackgroundImages = () => {
             alt="Image 1" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1.02)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.75)' : 'brightness(1.02)' }} 
           />
         </div>
         <div
@@ -55,7 +58,7 @@ const BackgroundImages = () => {
             alt="Image 2" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1.02)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.75)' : 'brightness(1.02)' }} 
           />
         </div>
         <div
@@ -67,7 +70,7 @@ const BackgroundImages = () => {
             alt="Image 3" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1.02)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.75)' : 'brightness(1.02)' }} 
           />
         </div>
         <div
@@ -79,18 +82,18 @@ const BackgroundImages = () => {
             alt="Image 4" 
             layout="fill" 
             objectFit="cover"
-            style={{ filter: isDarkMode ? 'brightness(0.5)' : 'brightness(1.02)' }} // Adjusted brightness for subtle effect
+            style={{ filter: isDarkMode ? 'brightness(0.75)' : 'brightness(1.02)' }} 
           />
         </div>
       </div>
-      <div 
+      <div
         onClick={toggleTheme}
         className={`fixed bottom-4 right-4 flex items-center justify-center w-12 h-12 z-50 rounded-full cursor-pointer ${isDarkMode ? 'bg-gray-800 text-yellow-300' : 'bg-gray-500 text-gray-700'} shadow-lg transition-all duration-300`}
       >
-        <FontAwesomeIcon 
-          icon={isDarkMode ? faSun : faMoon} 
-          className={`text-white ${isDarkMode ? 'text-yellow-400' : 'text-gray-700'}`} 
-          size="lg" 
+        <FontAwesomeIcon
+          icon={isDarkMode ? faSun : faMoon}
+          className={`text-white ${isDarkMode ? 'text-yellow-400' : 'text-gray-700'}`}
+          size="lg"
         />
       </div>
     </div>
